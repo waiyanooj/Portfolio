@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./A.png">
+  <title>AIDEN</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Special+Gothic+Expanded+One&display=swap');
+    
+    @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Special+Gothic+Expanded+One&display=swap');
+
+
+    * { 
+    margin:0; 
+    padding:0;
+    box-sizing:border-box;
+    }
+
+    body { 
+    font-family: sans-serif;
+    background: #292F36;
+    scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0; 
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #292F36; 
+      border-bottom:1px solid #ddd;
+      height: 60px;
+      z-index: 1000;
+    }
+
+
+   .logo { 
+    display: flex;
+    justify-content: end;
+    font-size:1.5rem; 
+    color:#12F7D6; 
+    text-decoration:none; 
+    width: 200px;
+
+    }
+    nav {
+      display: flex;
+      flex-grow:1; 
+      justify-content:end;
+      padding-right: 50px;
+    }
+    nav ul {
+      display: flex; 
+      list-style:none; 
+      gap:1.5rem;
+    }
+    nav a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration:none; 
+      font-size:1.2rem;
+      font-weight: 600;
+      color: #12F7D6; 
+      padding:.5rem;
+      border-bottom:2px solid transparent;
+      transition: .3s ease-in;
+    }
+    nav a:hover{
+      color:#fff;
+    }
+
+    nav a i {
+      font-size: 1.5rem;
+    }
+    .search {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      width: 200px;
+    }
+    .search input {
+      border: 2px solid #12F7D6;
+      color: #fff;
+      background: transparent;
+      border-radius: 50px;
+      padding-left: 15px;
+      width: 200px;
+      height: 30px;
+    }
+    .search input:focus {
+      outline: none;
+      border-color: #12F7D6;
+    }
+
+    /* hamburger toggle */
+    .toggle { 
+     display:none;
+    }
+
+     .hamburger {
+      display:none;
+      width: 500px;
+      cursor: pointer;
+      flex-direction: column; 
+      gap:4px;
+    }
+
+
+    .hamburger span {
+      display: block;
+      width:25px; 
+      height:3px;
+      background:#12F7D6;
+    }
+
+    
+    section {
+      width: 100%;
+      height:90vh;
+      margin-top: 60px;
+    }
+
+    .container{
+      padding-top: 60px;
+      height: 85vh;
+      width: 100%;
+      animation: container 2s ease-out forwards;
+    }
+
+    @keyframes container {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    
+
+    /* .dev-text{
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      margin-top: 100px;
+    } */
+
+    .container h1{
+      display: flex;
+      width: 100%;
+      height: 60px;
+      align-items: end;
+      justify-content: center;
+      font-size: 5rem;
+      font-weight: normal;
+      position: absolute;
+      color: #12F7D6;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .container-2{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      height: 70vh;
+    }
+
+    .profile-box{
+      display: flex;
+      align-items: end;
+      justify-content: end;
+      width: 500px;
+      flex: 2;
+    }
+
+    .profile{
+      text-align: center;
+      background: transparent;
+      border: 2px solid #12F7D6;
+      border-top-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+      height: 400px;
+      width: 250px;
+      margin-right: 50px;
+    }
+
+
+    .p{
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+    }
+
+    .profile-img{
+      padding-top: 10px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 2px solid #12F7D6;
+    }
+
+    .tex-1{
+      padding-top: 5px;
+    }
+
+    .tex-1 h3 {
+      color: #12F7D6;
+    }
+
+    .tex-1 p{
+      color: #12F7D6;
+    }
+
+    .phone {
+      padding-top: 15px;
+      padding-left: 15px;
+      text-align: start;
+      color: #fff;
+    }
+
+    .phone span{
+      padding-left: 20px;
+      color: #12F7D6;
+    }
+
+    .telegram{
+      padding-top: 5px;
+      padding-left: 15px;
+      text-align: start;
+      color: #fff;
+    }
+
+    .telegram span{
+      padding-left: 20px;
+      color: #12F7D6;
+    }
+
+    .gmail{
+      padding-top: 5px;
+      padding-left: 15px;
+      text-align: start;
+      color: #fff;
+    }
+
+    .gmail span{
+      padding-left: 20px;
+      color: #12F7D6;
+    }
+
+    .location{
+      padding-top: 5px;
+      padding-left: 15px;
+      text-align: start;
+      color: #fff;
+    }
+
+    .location span{
+      padding-left: 20px;
+      color: #12F7D6;
+    }
+
+    .download{
+      margin-top: 20px;
+      background: #12F7D6;
+      color: #292F36;
+      border: none;
+      height: 30px;
+      width: 150px;
+      border-radius: 10px;
+    }
+
+    .download a{
+      text-decoration: none;
+      color: #292F36;
+      font-weight: 500;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .text-box{
+      display: grid;
+      align-items: center;
+      width: 500px;
+      margin-top: 150px;
+      margin-left: 50px;
+      justify-items: start;
+      flex: 2;
+      
+    }
+
+    .text{
+      font-size: 2rem;
+      color: #fff;
+      font-family: "Rubik", sans-serif;  
+    }
+
+    .text .slept{
+      font-size: 15px;
+    }
+
+    .text .slept-1{
+      font-size: 15px;
+    }
+
+    .text .name{
+      color: #12F7D6;
+      font-weight: 700;
+    }
+
+    .text-2{
+      color: #12F7D6;
+      margin-bottom: 50px;
+      font-family: "Rubik", sans-serif;
+      margin-top: 20px;
+    }
+
+    .text-3{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #12F7D6;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-family: "Rubik", sans-serif;
+      width: 300px;
+    }
+
+    .text-3 .talk a i{
+      margin-left: 20px;
+      width: 40px;
+      height: 40px;
+      color: #12F7D6;
+    }
+
+    .skill-box{
+      display: grid;
+      align-items: center;
+      width: 400px;
+      height: 500px;
+      flex: 1;
+      padding-right: 100px;
+    }
+
+    .skill-1{
+      display: flex;
+      align-items: center;
+      height: 80px;
+      width: 250px;
+      margin-top: 150px;
+      background: #252525;
+      padding: 20px;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      font-family: "Rubik", sans-serif;
+
+    }
+
+    .skill-1 .number{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: #12F7D6;
+    }
+
+    .skill-1 .four{
+      padding-left: 17px;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .skill-2{
+      display: flex;
+      align-items: center;
+      background: #252525;
+      width: 250px;
+      height: 80px;
+      padding: 20px;
+      font-family: "Rubik", sans-serif;
+
+    }
+
+    .skill-2 .number_Six{
+      color: #12F7D6;
+      font-size: 2rem;
+    }
+
+    .skill-2 .six{
+      color: #fff;
+      padding-left: 17px;
+      font-size: 14px;
+    }
+
+
+    .skill-3{
+      display: flex;
+      align-items: center;
+      background: #252525;
+      width: 250px;
+      height: 80px;
+      margin-bottom: 110px;
+      padding-left: 20px;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      font-family: "Rubik", sans-serif;
+
+    }
+
+    .skill-3 .ic{
+      color: #12F7D6;
+      font-size: 1.5rem;
+    }
+
+    .skill-3 .experience{
+      color: #fff;
+      padding-left: 15px;
+      font-size: 14px;
+    }
+
+    .scroll{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.8rem;
+    }
+
+    .scroll a i{
+      color: #12F7D6;
+    }
+
+    .con{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .skill-text{
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      font-size: 3rem;
+      font-family: "Rubik", sans-serif;
+      border-bottom: 3px solid #12F7D6;
+      height: 100px;
+      width: 200px;
+      color: #12F7D6;
+    }
+
+    .con-2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      margin-top: 30px;
+    }
+
+    .section-2{
+      animation: section-2 2s ease-out forwards;
+    }
+
+    @keyframes section-2 {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .con-box{
+      display: flex;
+      justify-content: end;
+      padding-right: 20px;
+      flex: 1;
+    }
+    
+    .con-box-2{
+      display: flex;
+      justify-content: start;
+      flex: 1;
+    }
+
+    .boxes{
+      text-align: center;
+      width: 200px;
+      height: 110px;
+      background: #12F7D6;
+      border-radius: 10px;
+    }
+
+    .boxes .items{
+      font-size: 2rem;
+      margin-top: 10px;
+    }
+
+    .boxes .web_dev{
+      font-family: "Rubik", sans-serif;
+      font-weight: 500;
+    }
+
+    .boxes .web_skill{
+      font-family: "Rubik", sans-serif;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .boxes-2{
+      text-align: center;
+      width: 200px;
+      height: 110px;
+      background: #12F7D6;
+      border-radius: 10px;
+    }
+
+    .boxes-2 .items-2{
+      font-size: 2rem;
+      margin-top: 10px;
+    }
+
+    .boxes-2 .app_dev{
+      font-family: "Rubik", sans-serif;
+      font-weight: 500;
+    }
+
+    .boxes-2 .app_skill{
+      font-family: "Rubik", sans-serif;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .con-3{
+      display: flex;
+      flex-direction: row;
+      margin-top: 50px;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .con_box{
+      display: flex;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .con_box .html{
+      width: 200px;
+      height: 150px;
+      background: #333;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .con_box .html .html-logo{
+      display: flex;
+      justify-content: center;
+    }
+
+    .con_box .html .html-logo i{
+      font-size: 2rem;
+      margin-top: 10px;
+      color: #E34F26;
+    }
+
+    .con_box .html .html-name{
+      display: flex;
+      justify-content: center;
+      color: #EF652A;
+      margin-top: 5px;
+    }
+
+    .con_box .html .html-text{
+      text-align: center;
+      color: #fff;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+
+    .con_box-2{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .con_box-2 .css{
+      width: 200px;
+      height: 150px;
+      background: #333;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .con_box-2 .css .css-logo{
+      display: flex;
+      justify-content: center;
+    }
+
+    .con_box-2 .css .css-logo i{
+      font-size: 2rem;
+      margin-top: 10px;
+      color: #264DE4;
+    }
+
+    .con_box-2 .css .css-name{
+      display: flex;
+      justify-content: center;
+      color: #264DE4;
+      margin-top: 5px;
+    }
+
+    .con_box-2 .css .css-text{
+      text-align: center;
+      color: #fff;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+
+
+    .con_box-3{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .con_box-3 .js{
+      width: 200px;
+      height: 150px;
+      background: #333;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .con_box-3 .js .js-logo{
+      display: flex;
+      justify-content: center;
+    }
+
+    .con_box-3 .js .js-logo i{
+      font-size: 2rem;
+      margin-top: 10px;
+      color: #F7DF1E;
+    }
+
+    .con_box-3 .js .js-name{
+      display: flex;
+      justify-content: center;
+      color: #F7DF1E;
+      margin-top: 5px;
+    }
+
+    .con_box-3 .js .js-text{
+      text-align: center;
+      color: #fff;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+
+    .con_box-4{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .con_box-4 .php{
+      width: 200px;
+      height: 150px;
+      background: #333;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .con_box-4 .php .php-logo{
+      display: flex;
+      justify-content: center;
+    }
+
+    .con_box-4 .php .php-logo i{
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 10px;
+      color: #000;
+      -webkit-text-stroke: .5px #8993BE;
+      background: #474A8A;
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .con_box-4 .php .php-name{
+      display: flex;
+      justify-content: center;
+      color: #8993BE;
+      margin-top: 5px;
+    }
+
+    .con_box-4 .php .php-text{
+      text-align: center;
+      color: #fff;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .con_box-5{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .con_box-5 .react{
+      width: 200px;
+      height: 150px;
+      background: #333;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .con_box-5 .react .react-logo{
+      display: flex;
+      justify-content: center;
+    }
+
+    .con_box-5 .react .react-logo i{
+      font-size: 2rem;
+      margin-top: 10px;
+      color: #12F7D6;
+    }
+
+    .con_box-5 .react .react-name{
+      display: flex;
+      justify-content: center;
+      color: #12F7D6;
+      margin-top: 5px;
+    }
+
+    .con_box-5 .react .react-text{
+      text-align: center;
+      color: #fff;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .con_box-6{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .con_box-6 .flutter{
+      width: 200px;
+      height: 150px;
+      background: #333;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .con_box-6 .flutter .flutter-logo{
+      display: flex;
+      justify-content: center;
+    }
+
+    .con_box-6 .flutter .flutter-logo i{
+      font-size: 2rem;
+      margin-top: 10px;
+      color: #027DFD ;
+    }
+
+    .con_box-6 .flutter .flutter-name{
+      display: flex;
+      justify-content: center;
+      color: #027DFD ;
+      margin-top: 5px;
+    }
+
+    .con_box-6 .flutter .flutter-text{
+      text-align: center;
+      color: #fff;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .footer{
+      background: #292F36;
+      width: 100%;
+      height: 100px;
+      border-top: 2px solid #12F7D6;
+    }
+
+    .icon-foot{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+
+    .icon-foot a i{
+      color: #12F7D6;
+      padding: 10px;
+      transition: .5s ease-in;
+    }
+
+    .icon-foot a i:hover{
+          color: #252525;
+        }
+
+
+    .con-foot{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #12F7D6;
+      margin-top: 10px;
+    }
+
+    
+
+    /* mobile styles */
+    /* Tablet (max-width: 1024px) & Mobile (max-width: 768px) */
+@media (max-width: 1024px) {
+  .container-2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    height: auto;
+  }
+
+  .profile-box, .text-box, .skill-box {
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-box {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 40px;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .text, .text-2, .text-3 {
+    margin-left: 0;
+    margin-top: 430px;
+  }
+
+  .text {
+    display: none;
+    
+  }
+
+  .text-2{
+    display: none;
+  }
+
+  .text-3 .talk{
+    margin-right: 50px;
+  }
+
+  .container h1 {
+    font-size: 3rem;
+    position: static;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: -15px;
+  }
+
+  .profile {
+    margin-right: 0;
+  }
+
+  .skill-box {
+    padding-right: 0;
+    
+  }
+
+  .section-2{
+    margin-top: 450px;
+  }
+  
+  .con-2 {
+    flex-direction: column; /* row ကို column ပြောင်း */
+    align-items: center;
+    text-align: center;
+  }
+
+  .con-box,
+  .con-box-2 {
+    justify-content: center; /* center alignment */
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .boxes,
+  .boxes-2 {
+    width: 90%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .con-3 {
+    flex-direction: column; /* skill box row to column */
+    align-items: center;
+    gap: 20px;
+  }
+
+  .con_box,
+  .con_box-2,
+  .con_box-3,
+  .con_box-4,
+  .con_box-5,
+  .con_box-6 {
+    flex: unset;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .con_box .html,
+  .con_box-2 .css,
+  .con_box-3 .js,
+  .con_box-4 .php,
+  .con_box-5 .react,
+  .con_box-6 .flutter {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .footer{
+    margin-top:900px;
+  }
+
+  .con-foot{
+    font-size: 1rem;
+  }
+
+}
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute; 
+        top:60px; 
+        left:0;
+        right:0;
+        display: flex; 
+        background:#333;
+        flex-direction: column; 
+        border-bottom: 1px solid #12F7D6;
+        align-items:center;
+        max-height:0; 
+        overflow:hidden;
+        transition: max-height .3s ease-out;
+      }
+      .toggle:checked + .hamburger + nav ul {
+        max-height:300px;
+      }
+      .hamburger { 
+        display:flex; 
+        justify-content: end;
+        align-items: end;
+    }
+
+    .text-box{
+      height: 10px;
+    }
+
+    .search {
+      display: none; /* Hide search bar on mobile */
+    }
+
+    .boxes{
+      width: 250px;
+      height: 110px;
+    }
+
+    .boxes-2{
+      width: 250px;
+      height: 110px;
+    }
+  }
+   
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://github.com/waiyanooj" class="logo">Aiden</a>
+    <input type="checkbox" id="toggle" class="toggle">
+    <label for="toggle" class="hamburger" id="menu_Bar" onclick="menu()">
+      <span id="span"></span><span id="span"></span><span id="span"></span>
+    </label>
+    <nav>
+      <ul>
+        <li><a href="./index.html" id="home" >Home</a></li>
+        <li><a href="./blog.html" id="blog">Blog</a></li>
+        <div class="search" id="search">
+        <input type="text" placeholder="Search..." id="search_Bar" onkeyup="search()">
+        </div>
+        <li><a href="https://github.com/waiyanooj"><i class="bx bxl-github"></i></a></li>
+        <li><a href="https://www.facebook.com/share/15o4MtFVB8"><i class='bx bxl-meta' ></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- <div class="container">
+  <div class="sidebar">
+    <a href="#profile" ><i class='bx bx-home'></i></a>
+    <a href="#about-me" class="about"><i class='bx bx-user'></i></a>
+    <a href="#skill"><i class='bx bx-book'></i></a>
+    <a href="#work"><i class='bx bx-briefcase-alt-2'></i></a>
+  
+  </div>
+  </div> -->
+
+  <section class="section-1" id="#Home">
+    <div class="container">
+      <div class="dev-text">
+      <h1>Developer</h1>
+    </div>
+      <div class="container-2">
+      <div class="profile-box">
+      <div class="profile">
+        
+        <div class="p">
+        <div class="profile-img">
+        <img src="./Adobe Express - file.png" alt="" width="70px">
+        </div>
+      </div>
+        <div class="tex-1">
+        <h3>Wai Yan</h3> 
+        <p>Full-Stack Developer</p>
+        <div class="phone"><i class='bx bx-phone'></i><span>+959400349148</span></div>
+        <div class="telegram"><i class='bx bxl-telegram'></i><span>@tommyaiden20</span></div>
+        <div class="location"><i class='bx bx-home-circle'></i><span>South Dagon, Yangon</span></div>
+        <div class="gmail"><i class='bx bxl-gmail'></i><span>oow199849@gmail.com</span></div>
+        <button class="download" type="submit"><a href="./Brown & Cream Professional Web Developer Resume-1.pdf" download="My_CV.pdf"><i class='bx bxs-download'></i>Download CV</a></button>
+        </div>
+      </div>
+      </div>
+
+      <div class="text-box">
+        <div class="text">
+          <p> <span class="slept-1"><> </span> <br> Hay <br> I'm <span class="name"> Wai Yan</span>, <br> Full-Stack Developer <span class="slept">< /></span></p>
+        </div>
+        <div class="text-2">
+          <p> <>  <br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit reprehenderit velit praesentium natus. <br> < /></p>
+        
+        </div>
+
+        <div class="text-3">
+          <h4>Let's Talk <span class="talk"><a href="https://t.me/tommyaiden20"><i class='bx bxl-telegram'></i></a></span></h4>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-1">
+        <span class="number">  4 </span><span class="four"> HTML , CSS , JAVASCRIPT , PHP</span>
+        </div> 
+        <div class="skill-2">
+          <span class="number_Six"> 6 </span><span class="six">BOOTSTRAP , JQUERY , LARAVEL , MYSQL , API , UI / UX</span>
+        </div>
+        <div class="skill-3">
+          <span class="ic"><i class='bx bxs-briefcase'></i></span><span class="experience">3 Months experience in UI / UX Design with Figma.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="section-2" id="#about">
+    <div class="scroll"><a href="#"><i class='bx bxs-mouse' ></i></a></div>
+    <div class="con">
+    <div class="skill-text">Skills</div>
+    </div>
+
+    <div class="con-2">
+      <div class="con-box">
+        <div class="boxes">
+        <div class="items"><i class='bx bx-laptop'></i></div>
+        <p class="web_dev">Web Development</p>
+        <p class="web_skill">Html , Css , Javascript , Php</p>
+      </div>
+      </div>
+      <div class="con-box-2">
+        <div class="boxes-2">
+        <div class="items-2"><i class='bx bx-mobile-alt'></i></div>
+        <p class="app_dev">App Development</p>
+        <p class="app_skill">React js & Flutter (Learning)</p>
+      </div>
+      </div>
+    </div>
+
+    <div class="con-3">
+      <div class="con_box">
+        <div class="html">
+          <div class="html-logo"><i class='bx bxl-html5' ></i></div>
+          <p class="html-name">HTML 5</p>
+          <p class="html-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, voluptatum!</p>
+        </div>
+      </div>
+      <div class="con_box-2">
+        <div class="css">
+          <div class="css-logo"><i class='bx bxl-css3' ></i></div>
+          <p class="css-name">CSS 3</p>
+          <p class="css-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, nihil.</p>
+        </div>
+      </div>
+      <div class="con_box-3">
+        <div class="js">
+          <div class="js-logo"><i class='bx bxl-javascript'></i></div>
+          <p class="js-name">Javascript</p>
+          <p class="js-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, eligendi?</p>
+        </div>
+      </div>
+      <div class="con_box-4">
+        <div class="php">
+          <div class="php-logo"><i class='bx bxl-php' ></i></div>
+          <p class="php-name">PHP</p>
+          <p class="php-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, aperiam.</p>
+        </div>
+      </div>
+      <div class="con_box-5">
+        <div class="react">
+          <div class="react-logo"><i class='bx bxl-react' ></i></div>
+          <p class="react-name">React js</p>
+          <p class="react-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, qui.</p>
+        </div>
+      </div>
+      <div class="con_box-6">
+        <div class="flutter">
+          <div class="flutter-logo"><i class='bx bxl-flutter' ></i></div>
+          <p class="flutter-name">Flutter</p>
+          <p class="flutter-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, in!</p>
+        </div>
+      </div>
+    </div>
+
+    
+  </section>
+
+  <footer class="footer">
+    <div class="icon-foot">
+      <a href="https://www.facebook.com/share/15o4MtFVB8"><i class="bx bxl-meta"></i></a>
+      <a href="https://github.com/waiyanooj"><i class="bx bxl-github"></i></a>
+      <a href="https://t.me/tommyaiden20"><i class='bx bxl-telegram'></i></a>
+    </div>
+    
+    <div class="con-foot">
+      &copy; <span id="year"></span> Copy by Aiden
+    </div>
+  </footer>
+
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const homeLink = document.getElementById('home');
+      const blogLink = document.getElementById('blog');
+
+      // Highlight the current page link
+      if (window.location.pathname.includes('index.html')) {
+        homeLink.style.borderBottom = '2px solid #12F7D6';
+      } else if (window.location.pathname.includes('blog.html')) {
+        blogLink.style.borderBottom = '2px solid #12F7D6';
+      }
+      
+      
+      
+    
+    });
+
+    // change color hamburger menu
+      document.getElementById("menu_Bar").addEventListener("click", function() {
+          const spans = document.querySelectorAll("#span");
+          spans.forEach(span => {
+            if (span.style.background === "white") {
+              span.style.background = "#12F7D6"; // Change to original color
+            } else {
+              span.style.background = "white"; // Change to white on click
+            }
+          });
+        });
+
+     document.getElementById("year").textContent = new Date().getFullYear();
+    
+</script>
+</html>

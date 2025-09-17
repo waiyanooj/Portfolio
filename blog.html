@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./A.png">
+  <title>AIDEN</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Special+Gothic+Expanded+One&display=swap');
+
+   * { 
+    margin:0; 
+    padding:0;
+    box-sizing:border-box;
+    }
+
+    body { 
+    font-family: sans-serif;
+    background: #292F36;
+    scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0; 
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #292F36; 
+      border-bottom:1px solid #ddd;
+      height: 60px;
+      z-index: 1000;
+    }
+    .logo { 
+    display: flex;
+    justify-content: end;
+    font-size:1.5rem; 
+    color:#12F7D6; 
+    text-decoration:none; 
+    width: 200px;
+    }
+    nav {
+      display: flex;
+      flex-grow:1; 
+      justify-content:end;
+      padding-right: 50px;
+    }
+    nav ul {
+      display: flex; 
+      list-style:none; 
+      gap:1.5rem;
+    }
+    nav a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration:none; 
+      font-size:1.2rem;
+      font-weight: 600;
+      color: #12F7D6; 
+      padding:.5rem;
+      border-bottom:2px solid transparent;
+      transition: .3s ease-in;
+    }
+    nav a:hover{
+      color:#fff;
+    }
+
+    nav a i {
+      font-size: 1.5rem;
+    }
+    .search {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      width: 200px;
+    }
+    .search input {
+      border: 2px solid #12F7D6;
+      color: #fff;
+      background: transparent;
+      border-radius: 50px;
+      padding-left: 15px;
+      width: 200px;
+      height: 30px;
+    }
+    .search input:focus {
+      outline: none;
+      border-color: #12F7D6;
+    }
+
+    /* hamburger toggle */
+    .toggle { 
+     display:none;
+    }
+
+    .hamburger {
+      display:none;
+      width: 500px;
+      cursor: pointer;
+      flex-direction: column; 
+      gap:4px;
+    }
+    .hamburger span {
+      display: block;
+      width:25px; 
+      height:3px;
+      background:#fff;
+    }
+    /* Section */
+    section {
+      width: 100%;
+      height:50vh;
+      margin-top: 60px;
+    }
+
+    .one{
+      margin-top: 60px;
+      height: 92vh;
+      animation: one 2s ease-out forwards;
+    }
+
+    @keyframes one {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+
+    .container{
+      height: 92vh;
+      border-bottom: 2px solid #12F7D6;
+    }
+
+    .text{
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      height: 120px;
+      width: 100%;
+    }
+
+    .text-con{
+      text-align: center;
+      width: 300px;
+      border-bottom: 2px solid #12F7D6;
+      color: #12F7D6;
+      font-size: 4rem;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .p-con{
+      text-align: center;
+      margin-top: 10px;
+      color: #fff;
+      font-family: "Rubik", sans-serif;
+    }
+
+
+    .button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 70px;
+      height: 100px;
+    }
+
+    .button a button{
+      height: 50px;
+      width: 250px;
+      font-size: 20px;
+      border-radius: 50px;
+      background: transparent;
+      border: 2px solid #12F7D6;
+      color: #12F7D6;
+      font-family: "Rubik", sans-serif;
+      transition: 1s ease-in-out ;
+    }
+
+    .button a button:hover{
+      background: #12F7D6;
+      color: #292F36;
+    }
+
+    .carousel {
+      margin-top: 100px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .track {
+      display: flex;
+      animation: scroll 20s linear infinite;
+    }
+
+    @keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+    .track img {
+      width: 300px;
+      height: 200px;
+      padding: 10px;
+      border-radius: 20px;
+      flex-shrink: 0; /* prevent shrinking */
+      object-fit: cover;
+    }
+
+    .two{
+      height: 100vh;
+    }
+
+    .information{
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      margin-top: 50px;
+    }
+
+    .infor-text{
+      text-align: center;
+      width: 250px;
+      margin-left: 80px;
+      color: #12F7D6;
+      font-size: 2rem;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .con{
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      height: 500px;
+      margin-top: 70px;
+      border-bottom: 2px solid #12F7D6;
+    }
+
+    .con-2{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      gap: 20px;
+      width: 80%;
+      height: 400px;
+      border-radius: 20px;
+      background: #252525;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .con-3{
+      flex: 2;
+    }
+
+    .con-pic{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height:350px;
+      flex: 1;
+    }
+
+    .con-pic img{
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .con-text{
+     width: 90%;
+     color: gray;
+     margin-top: 10px;
+     font-family: "Rubik", sans-serif;
+    }
+
+    .con-title{
+      color: #12F7D6;
+      font-size: 1.5rem;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .date{
+      margin-top: 20px;
+      display: flex;
+    }
+
+    .web-dev{
+      text-align: center;
+      background: gray;
+      width: 180px;
+      border-radius: 50px;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .name{
+      margin-left: 20px;
+      color: #fff;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .name .aiden{
+      color: #12F7D6;
+      font-weight: 500;
+    }
+
+    .today{
+      margin-left: 20px;
+      color: #fff;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .today .date-day{
+      color: #12F7D6;
+    }
+
+    .container-2{
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      height: 500px;
+      margin-top: 100px;
+    }
+
+    .container-3{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 20px;
+      width: 80%;
+      border-radius: 20px;
+      background: #1a1a1a;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .container-5{
+      flex: 2;
+    }
+
+    .container-pic{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height:350px;
+      flex: 1;
+    }
+
+    .container-pic img{
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .container-text{
+     width: 90%;
+     color: gray;
+     margin-top: 10px;
+     font-family: "Rubik", sans-serif;
+    }
+
+    .container-title{
+      color: #12F7D6;
+      font-size: 1.5rem;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .container-date{
+      margin-top: 20px;
+      display: flex;
+    }
+
+    .container-web{
+      text-align: center;
+      background: gray;
+      width: 180px;
+      border-radius: 50px;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .container-name{
+      margin-left: 20px;
+      color: #fff;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .container-name .container-aiden{
+      color: #12F7D6;
+      font-weight: 500;
+    }
+
+    .container-today{
+      margin-left: 20px;
+      color: #fff;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .container-today .container-day{
+      color: #12F7D6;
+    }
+
+    .footer{
+      background: #292F36;
+      width: 100%;
+      height: 100px;
+      border-top: 2px solid #12F7D6;
+    }
+
+    .icon-foot{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+
+    .icon-foot a i{
+      color: #12F7D6;
+      padding: 10px;
+      transition: .5s ease-in;
+    }
+
+    .icon-foot a i:hover{
+          color: #252525;
+        }
+
+
+    .con-foot{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #12F7D6;
+      margin-top: 10px;
+    }
+
+
+
+    /* mobile styles */
+    @media (max-width: 1024px) {
+      nav ul {
+        position: absolute; 
+        top:60px; 
+        left:0;
+        right:0;
+        display: flex; 
+        background:#333;
+        flex-direction: column; 
+        border-bottom: 1px solid #12F7D6;
+        align-items:center;
+        max-height:0; 
+        overflow:hidden;
+        transition: max-height .3s ease-out;
+      }
+      .toggle:checked + .hamburger + nav ul {
+        max-height:300px;
+      }
+      .hamburger { 
+        display:flex; 
+        justify-content: end;
+        align-items: end;
+        
+    }
+
+    .search {
+      display: none; /* Hide search bar on mobile */
+    }
+
+    .text-con{
+      font-size: 3rem;
+      width: 250px;
+    }
+
+    .p-con{
+      font-size: 14px;
+    }
+
+    .information {
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      margin-left: 0;
+      margin-top: 10px;
+      height: 100px;
+  }
+
+  .infor-text {
+    width: 200px;
+    margin-left: 0;
+    color: #12F7D6;
+    border-bottom: 2px solid #12F7D6;
+  }
+
+  .con {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    height: 950px;
+  }
+
+  .con-2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    background: transparent;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .con-4{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background: #252525;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    height: 600px;
+    border-radius: 20px;
+  }
+
+  .con-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .con-pic {
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .con-pic img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .con-text {
+    padding-left: 15px;
+    padding-right: 25px;
+    font-size: 15px;
+  }
+
+  .con-title{
+    padding-left: 35px;
+    width: 100%;
+  }
+
+  .container-5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-6{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #252525;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    height: 600px;
+    border-radius: 20px;
+  }
+
+  .date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-2 {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 100px;
+    padding-bottom: 20px;
+  }
+
+  .container-3 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    background: none;
+    box-shadow: none;
+  }
+
+  .container-pic {
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .container-pic img {
+    width: 200px;
+    height: 150px;
+  }
+
+  .container-text {
+    padding-left: 15px;
+    padding-right: 25px;
+    font-size: 15px;
+  }
+
+  .container-title{
+    margin-right: 10px;
+    width: 80%;
+  }
+
+  .container-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer{
+    margin-top: 30px;
+  }
+
+  .con-foot{
+    font-size: 1rem;
+  }
+
+}
+
+  @media (max-width: 768px) {
+  .infor-text {
+    font-size: 1.5rem;
+  }
+
+  .con-title {
+    font-size: 1.2rem;
+  }
+
+  .con-pic img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .container-title {
+    font-size: 1.2rem;
+  }
+
+  .container-pic img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Small Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .infor-text {
+    font-size: 200.rem;
+  }
+
+  .con-title {
+    font-size: 1rem;
+  }
+
+  .con-text {
+    font-size: 0.9rem;
+  }
+
+  .web-dev {
+    width: 100px;
+    font-size: 0.7rem;
+  }
+
+  .con-pic img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .container-title {
+    font-size: 1rem;
+  }
+
+  .container-text {
+    font-size: 0.9rem;
+  }
+
+  .container-web {
+    width: 100px;
+    font-size: 0.7rem;
+  }
+
+  .container-pic img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .con{
+    height: 1100px;
+  }
+
+  .con-4{
+    background: #252525;
+    height: 750px;
+  }
+
+  .container-6{
+    height: 750px;
+  }
+
+  .track {
+      display: flex;
+      animation: scroll 10s linear infinite;
+    }
+
+    @keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+
+}
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://github.com/waiyanooj" class="logo">Aiden</a>
+    <input type="checkbox" id="toggle" class="toggle">
+    <label for="toggle" class="hamburger" id="menu_Bar" onclick="menu()">
+      <span id="span"></span><span id="span"></span><span id="span"></span>
+    </label>
+    <nav>
+      <ul>
+        <li><a href="./index.html" id="home" >Home</a></li>
+        <li><a href="./blog.html" id="blog">Blog</a></li>
+        <div class="search" id="search">
+        <input type="text" placeholder="Search..." id="search_Bar">
+        </div>
+        <li><a href="https://github.com/waiyanooj"><i class="bx bxl-github"></i></a></li>
+        <li><a href="https://www.facebook.com/share/15o4MtFVB8"><i class='bx bxl-meta' ></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="one">
+    <div class="container">
+      <div class="text">
+      <div class="text-con">BLOGS <i class='bx bxs-coffee-alt' ></i></div>
+    </div>
+      <div class="p-con">My thoughts on technology and business, Welcome to subscribe.</div>
+      <div class="button">
+        <a href="https://www.tiktok.com/@tommy.aiden?_t=ZS-8yaproLWlIf&_r=1"><button>Subscribe My Blogs <i class='bx bxl-tiktok' ></i></button></a>
+      </div>
+
+      <div class="carousel">
+  <div class="track">
+    <img src="./IMG_20240415_204302.jpg" alt="">
+    <img src="./IMG_20240416_011510.jpg" alt="">
+    <img src="./IMG_20240418_135143.jpg" alt="">
+    <img src="./IMG_20241027_130321_012.jpg" alt="">
+    <img src="./IMG_20241223_160555.jpg" alt="">
+    <img src="./IMG_20250218_233748_386~2.jpg" alt="">
+    <img src="./Screenshot 2024-03-22 at 01-57-30 MAU Village.png" alt="">
+    <img src="./Screenshot 2024-04-18 at 15-26-18 mau.png" alt="">
+    <img src="./Screenshot 2025-03-08 at 15-44-00 Untitled (13).pdf.png" alt="">
+    <img src="./Screenshot 2025-03-12 223630.png" alt="">
+
+    <!-- Duplicate for seamless loop -->
+    <img src="./IMG_20240415_204302.jpg" alt="">
+    <img src="./IMG_20240416_011510.jpg" alt="">
+    <img src="./IMG_20240418_135143.jpg" alt="">
+    <img src="./IMG_20241027_130321_012.jpg" alt="">
+    <img src="./IMG_20241223_160555.jpg" alt="">
+    <img src="./IMG_20250218_233748_386~2.jpg" alt="">
+    <img src="./Screenshot 2024-03-22 at 01-57-30 MAU Village.png" alt="">
+    <img src="./Screenshot 2024-04-18 at 15-26-18 mau.png" alt="">
+    <img src="./Screenshot 2025-03-08 at 15-44-00 Untitled (13).pdf.png" alt="">
+    <img src="./Screenshot 2025-03-12 223630.png" alt="">
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  <section class="two">
+    <div class="information">
+     <div class="infor-text">INFORMATION <i class='bx bxs-user-voice'></i></div>
+    </div>
+    <div class="con">
+      <div class="con-2">
+      <div class="con-1">
+        <div class="con-pic">
+          <img src="./profile-2.jpg" alt="">
+        </div>
+      </div>
+      <div class="con-3">
+      <div class="con-4">
+        <div class="con-title">About Me <i class='bx bxs-user-pin' ></i></div>
+        <div class="con-text">
+          <p>Hello everyone! My name is Wai Yan. <br>To talk about myself, I have to start around 2019. During the COVID-19 period in 2019, I had to take a break after completing Grade 10. Later, due to political circumstances, I ended up being away from formal education for almost four years.Around the end of 2023, I moved to Yangon to begin learning IT. Since I had been away from school for a while, I felt my English was weak, so I enrolled in The Space Language Academy (International House IH) and studied up to the Intermediate level.In the evenings, I joined a Web Developer course (HTML, CSS, GitHub) taught by teacher Aiden Brown from REDOC-11. My first project there was building a webpage titled “History of Pagoda.”In July 2024, I attended the ITPEC IP course at RMIT. After completing the IP level, I decided not to continue with the FE level and instead focused on my career path in web development. I started learning UI/UX design using Figma through YouTube tutorials and later worked as a UI/UX Designer at MyanAnts.After about three months, I had to leave the job due to travel difficulties and the political situation. Later, I joined a Full-Stack Developer (JavaScript) recorded video course taught by teacher Si Thu from Code Lab, which led me to where I am today.
+
+</p>
+        </div>
+        <div class="date">
+          <div class="web-dev">Web Development</div>
+          <div class="name"><i class='bx bxs-edit-alt' ></i> <span class="aiden">Aiden</span></div>
+          <div class="today"><i class='bx bxs-calendar-edit' ></i> <span class="date-day">4.8.2025</span></div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="container-2">
+      <div class="container-3">
+      <div class="container-4">
+        <div class="container-pic">
+          <img src="./IMG_20240418_135143.jpg" alt="">
+        </div>
+      </div>
+      <div class="container-5">
+      <div class="container-6">
+        <div class="container-title">What does it take to become a web Developer ?</div>
+        <div class="container-text">
+          <p>To become a web developer, the first thing you need is a clear vision. It's important to be able to visualize layouts — that’s the foundation.One piece of advice I’d give is: before jumping into coding, start by taking UI/UX design classes. This will help you understand design theory and layout structure in a systematic way.When you can plan layouts effectively, the desktop version of your site will look smooth, and you won’t need to rewrite much for the mobile version.On the coding side, it's essential to have a solid grasp of HTML, CSS, and JavaScript. Once you're confident with these core technologies, learning other languages won’t be as difficult.Each language has its own purpose, so it's important to choose wisely. For example, while PHP can be used for front-end tasks, it’s not very smooth visually — so most developers use it primarily for the server-side.Finally, if you're serious about becoming a web developer, you must get comfortable with:HTML, CSS, JavaScript (core) | Frameworks like Bootstrap, jQuery, Sass | Backend tools such as PHP (Laravel), databases, and APIs.
+            These are the fundamental tools and skills you'll need to succeed.</p>
+        </div>
+        <div class="container-date">
+          <div class="container-web">Web Development</div>
+          <div class="container-name"><i class='bx bxs-edit-alt' ></i> <span class="container-aiden">Aiden</span></div>
+          <div class="container-today"><i class='bx bxs-calendar-edit' ></i> <span class="container-day">4.8.2025</span></div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+     <footer class="footer">
+    <div class="icon-foot">
+      <a href="https://www.facebook.com/share/15o4MtFVB8"><i class="bx bxl-meta"></i></a>
+      <a href="https://github.com/waiyanooj"><i class="bx bxl-github"></i></a>
+      <a href="https://t.me/tommyaiden20"><i class='bx bxl-telegram'></i></a>
+    </div>
+    
+    <div class="con-foot">
+      &copy; <span id="year"></span> Copy by Aiden
+    </div>
+  </footer>
+  </section>
+
+ 
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const homeLink = document.getElementById('home');
+      const blogLink = document.getElementById('blog');
+
+      // Highlight the current page link
+      if (window.location.pathname.includes('index.html')) {
+        homeLink.style.borderBottom = '2px solid #12F7D6';
+      } else if (window.location.pathname.includes('blog.html')) {
+        blogLink.style.borderBottom = '2px solid #12F7D6';
+      }
+    });
+
+     // change color hamburger menu
+      document.getElementById("menu_Bar").addEventListener("click", function() {
+          const spans = document.querySelectorAll("#span");
+          spans.forEach(span => {
+            if (span.style.background === "white") {
+              span.style.background = "#12F7D6"; // Change to original color
+            } else {
+              span.style.background = "white"; // Change to white on click
+            }
+          });
+        });
+
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+  </script>
+</html>
