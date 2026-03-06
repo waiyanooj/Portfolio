@@ -52,7 +52,7 @@
     nav ul {
       display: flex; 
       list-style:none; 
-      gap:1.5rem;
+      gap:3.5rem;
     }
     nav a {
       display: flex;
@@ -746,13 +746,17 @@
     </label>
     <nav>
       <ul>
+        <div class="home-text-nav" style="display: flex; gap: 20px; ">
         <li><a href="./index.html" id="home" >Home</a></li>
         <li><a href="./blog.html" id="blog">Blog</a></li>
-        <div class="search" id="search">
-        <input type="text" placeholder="Search..." id="search_Bar">
         </div>
+        <!-- <div class="search" id="search">
+        <input type="text" placeholder="Search..." id="search_Bar" onkeyup="search()">
+        </div> -->
+        <div class="logo-icon-nav" style="display: flex; gap: 20px;">
         <li><a href="https://github.com/waiyanooj"><i class="bx bxl-github"></i></a></li>
         <li><a href="https://www.facebook.com/share/15o4MtFVB8"><i class='bx bxl-meta' ></i></a></li>
+        </div>
       </ul>
     </nav>
   </header>
