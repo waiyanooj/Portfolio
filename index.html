@@ -542,8 +542,11 @@
     }
 
     .con_box .html{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 200px;
-      height: 150px;
+      height: 160px;
       background: #333;
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     }
@@ -569,7 +572,7 @@
     .con_box .html .html-text{
       text-align: center;
       color: #fff;
-      margin-top: 10px;
+      /* margin-top: 10px; */
       font-size: 14px;
     }
 
@@ -582,8 +585,12 @@
     }
 
     .con_box-2 .css{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
       width: 200px;
-      height: 150px;
+      height: 160px;
       background: #333;
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     }
@@ -609,7 +616,6 @@
     .con_box-2 .css .css-text{
       text-align: center;
       color: #fff;
-      margin-top: 10px;
       font-size: 14px;
     }
 
@@ -623,6 +629,10 @@
     }
 
     .con_box-3 .js{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
       width: 200px;
       height: 150px;
       background: #333;
@@ -650,7 +660,6 @@
     .con_box-3 .js .js-text{
       text-align: center;
       color: #fff;
-      margin-top: 10px;
       font-size: 14px;
     }
 
@@ -663,8 +672,12 @@
     }
 
     .con_box-4 .php{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
       width: 200px;
-      height: 150px;
+      height: 160px;
       background: #333;
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     }
@@ -695,7 +708,6 @@
     .con_box-4 .php .php-text{
       text-align: center;
       color: #fff;
-      margin-top: 10px;
       font-size: 14px;
     }
 
@@ -707,8 +719,12 @@
     }
 
     .con_box-5 .react{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
       width: 200px;
-      height: 150px;
+      height: 160px;
       background: #333;
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     }
@@ -734,7 +750,6 @@
     .con_box-5 .react .react-text{
       text-align: center;
       color: #fff;
-      margin-top: 10px;
       font-size: 14px;
     }
 
@@ -746,8 +761,12 @@
     }
 
     .con_box-6 .flutter{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
       width: 200px;
-      height: 150px;
+      height: 160px;
       background: #333;
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     }
@@ -773,7 +792,6 @@
     .con_box-6 .flutter .flutter-text{
       text-align: center;
       color: #fff;
-      margin-top: 10px;
       font-size: 14px;
     }
 
@@ -926,7 +944,7 @@
   }
 
   .footer{
-    margin-top:900px;
+    margin-top:950px;
   }
 
   .con-foot{
@@ -994,9 +1012,10 @@
       <ul>
         <li><a href="./index.html" id="home" >Home</a></li>
         <li><a href="./blog.html" id="blog">Blog</a></li>
-        <div class="search" id="search">
+        <!-- <div class="search" id="search">
         <input type="text" placeholder="Search..." id="search_Bar" onkeyup="search()">
-        </div>
+        </div> -->
+        
         <li><a href="https://github.com/waiyanooj"><i class="bx bxl-github"></i></a></li>
         <li><a href="https://www.facebook.com/share/15o4MtFVB8"><i class='bx bxl-meta' ></i></a></li>
       </ul>
@@ -1032,8 +1051,8 @@
         <div class="phone"><i class='bx bx-phone'></i><span>+959400349148</span></div>
         <div class="telegram"><i class='bx bxl-telegram'></i><span>@tommyaiden20</span></div>
         <div class="location"><i class='bx bx-home-circle'></i><span>South Dagon, Yangon</span></div>
-        <div class="gmail"><i class='bx bxl-gmail'></i><span>oow199849@gmail.com</span></div>
-        <button class="download" type="submit"><a href="./Brown & Cream Professional Web Developer Resume-1.pdf" download="My_CV.pdf"><i class='bx bxs-download'></i>Download CV</a></button>
+        <div class="gmail"><i class='bx bxl-gmail'></i><span>aidenyann.dev@</span></div>
+        <button class="download" type="submit"><a href="./Resum.pdf" download="My_CV.pdf"><i class='bx bxs-download'></i>Download CV</a></button>
         </div>
       </div>
       </div>
@@ -1057,7 +1076,7 @@
         <span class="number">  4 </span><span class="four"> HTML , CSS , JAVASCRIPT , PHP</span>
         </div> 
         <div class="skill-2">
-          <span class="number_Six"> 6 </span><span class="six">BOOTSTRAP , JQUERY , LARAVEL , MYSQL , API , UI / UX</span>
+          <span class="number_Six"> 6 </span><span class="six">BOOTSTRAP , JQUERY , LARAVEL , MYSQL , UI / UX</span>
         </div>
         <div class="skill-3">
           <span class="ic"><i class='bx bxs-briefcase'></i></span><span class="experience">3 Months experience in UI / UX Design with Figma.</span>
@@ -1085,52 +1104,56 @@
         <div class="boxes-2">
         <div class="items-2"><i class='bx bx-mobile-alt'></i></div>
         <p class="app_dev">App Development</p>
-        <p class="app_skill">React js & Flutter (Learning)</p>
+        <p class="app_skill"> Flutter (Learning)</p>
       </div>
       </div>
     </div>
 
     <div class="con-3">
       <div class="con_box">
-        <div class="html">
+        <div class="html" style="gap: 5px;">
           <div class="html-logo"><i class='bx bxl-html5' ></i></div>
           <p class="html-name">HTML 5</p>
-          <p class="html-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, voluptatum!</p>
+          <p class="html-text" style="width: 90%;">I mainly learned html css from Redoc-11. I also learned through youtube tutorials.</p>
         </div>
       </div>
       <div class="con_box-2">
         <div class="css">
           <div class="css-logo"><i class='bx bxl-css3' ></i></div>
           <p class="css-name">CSS 3</p>
-          <p class="css-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, nihil.</p>
+          <p class="css-text" style="width: 90%;">I mainly learned html css from Redoc-11. I also learned through youtube tutorials.</p>
         </div>
       </div>
       <div class="con_box-3">
         <div class="js">
           <div class="js-logo"><i class='bx bxl-javascript'></i></div>
           <p class="js-name">Javascript</p>
-          <p class="js-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, eligendi?</p>
+          <p class="js-text" style="width: 90%;">I learned javascript basic in Redoc-11 and learned a lot in Code lab.</p>
         </div>
       </div>
       <div class="con_box-4">
         <div class="php">
           <div class="php-logo"><i class='bx bxl-php' ></i></div>
           <p class="php-name">PHP</p>
-          <p class="php-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, aperiam.</p>
+          <p class="php-text" style="width: 90%;">I systematically learned PHP in Code Lab, including backend looping, arrays, etc., and database CRUD.</p>
         </div>
       </div>
       <div class="con_box-5">
         <div class="react">
-          <div class="react-logo"><i class='bx bxl-react' ></i></div>
-          <p class="react-name">React js</p>
-          <p class="react-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, qui.</p>
+          <div class="react-logo" style=" margin-top: 10px;"><svg  xmlns="http://www.w3.org/2000/svg" width="40" height="40"  
+fill="red" viewBox="0 0 24 19" >
+<!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+<path d="M21.7 6.49s0-.04-.02-.05l-.02-.02-.03-.04-.03-.02-.04-.03-3.77-2.16a.32.32 0 0 0-.3 0l-3.76 2.16-.03.03-.04.02-.02.04-.02.02-.02.05v.03s-.02.05-.02.08v4.11l-3.13 1.8V4.47l-.02-.08v-.03l-.03-.05-.02-.03s-.02-.02-.02-.04l-.04-.02s-.02-.02-.03-.02L6.53 2.04a.29.29 0 0 0-.31 0L2.46 4.2s-.02.02-.04.02l-.03.02-.03.04-.02.03-.02.05-.02.03v12.96c0 .11.06.21.16.27l7.53 4.33.05.02h.03c.05.02.11.02.16 0h.02l.05-.04 7.52-4.33c.1-.05.15-.16.15-.27v-4.11l3.61-2.08c.09-.05.15-.16.15-.27V6.49l-.02-.02Zm-15.03 8.2V6.83l1.82-1.05 1.31-.76v7.87l-1.82 1.05zm-.3-12.01L9.5 4.49l-3.13 1.8-3.13-1.8zm3.45 18.47-6.9-3.97V5.03l1.31.75 1.81 1.05v8.4l.02.04v.05l.02.04.02.04.02.03.03.03s.02.02.03.02l.03.03 3.6 2.04v3.6Zm.31-4.15L7 15.23l3.29-1.89 3.6-2.08 3.13 1.81-2.29 1.31zm7.21.17-6.89 3.98v-3.6l5.1-2.91 1.79-1.02v3.57Zm0-8.21v3.57l-1.31-.76-1.82-1.05V7.15l1.31.76zm.31-.55L14.52 6.6l3.13-1.81 3.13 1.81zm3.45 2.31-3.13 1.8V8.95l1.82-1.04 1.31-.76z"/>
+</svg></div>
+          <p class="react-name" style="color: red;">Laravel</p>
+          <p class="react-text" style="width: 90%;">I learned Laravel in Code Lab to the point where I could write a project myself with the MVC pattern.</p>
         </div>
       </div>
       <div class="con_box-6">
         <div class="flutter">
           <div class="flutter-logo"><i class='bx bxl-flutter' ></i></div>
           <p class="flutter-name">Flutter</p>
-          <p class="flutter-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, in!</p>
+          <p class="flutter-text" style="width: 90%;">I consulted a friend about learning Flutter and he suggested that I teach myself.</p>
         </div>
       </div>
     </div>
